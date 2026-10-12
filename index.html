@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>жаба — the frog that listens</title>
+  <meta name="description" content="жаба is a free desktop app for Mac and Windows that transcribes audio and video on your own computer, with speaker labels, in 99 languages.">
+  <meta property="og:title" content="жаба — the frog that listens">
+  <meta property="og:description" content="Local transcription with speaker labels. Mac and Windows. Nothing leaves your computer.">
+  <meta property="og:image" content="assets/shots/title.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="crt"></div>
+
+  <nav class="nav">
+    <a href="#top" class="nav-logo"><img src="assets/frog-64.png" class="pix" width="24" height="24" alt="">ЖАБА</a>
+    <div class="nav-links">
+      <a href="#features">FEATURES</a>
+      <a href="#how">HOW</a>
+      <a href="#download">DOWNLOAD</a>
+      <a href="#faq">FAQ</a>
+      <button id="sound-btn" class="sound-btn" aria-label="Toggle sound">&#9835; ON</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="stars"></div>
+    <div class="hero-inner">
+      <img src="assets/frog-256.png" id="hero-frog" class="pix hero-frog" width="200" height="200" alt="жаба the pixel frog" title="Poke me">
+      <h1 class="logo">ЖАБА</h1>
+      <p class="tag">THE FROG THAT LISTENS</p>
+      <p class="sub">Drop in your meetings, interviews and lectures.<br>Get back clean transcripts that say <em>who</em> said <em>what</em>.<br>All on your own computer. Nothing is uploaded.</p>
+      <div class="cta-row">
+        <a class="btn btn-go" href="#download" id="cta-main">&#9654; PRESS START</a>
+        <a class="btn" href="#how">HOW IT WORKS</a>
+      </div>
+      <p class="platforms">FOR MAC &amp; WINDOWS &middot; FREE &middot; OPEN SOURCE</p>
+    </div>
+  </header>
+
+  <!-- SCREENSHOT -->
+  <section class="section">
+    <div class="screen-frame">
+      <div class="screen-bezel">
+        <img src="assets/shots/main-running.png" alt="жаба transcribing a folder of recordings, showing the console and a level progress bar" class="screen-img" id="shot-main">
+      </div>
+      <div class="screen-caption">
+        <button class="shot-tab active" data-shot="main-running">PLAYING</button>
+        <button class="shot-tab" data-shot="title">TITLE</button>
+        <button class="shot-tab" data-shot="stage-clear">STAGE CLEAR</button>
+        <button class="shot-tab" data-shot="config">CONFIG</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="section">
+    <h2 class="h2">&#9733; POWER-UPS &#9733;</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">&#127908;</div>
+        <h3>WHISPER LARGE-V3</h3>
+        <p>OpenAI's best open speech model. It handles accents, jargon and noisy rooms far better than built-in dictation.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128101;</div>
+        <h3>WHO SAID WHAT</h3>
+        <p>pyannote speaker detection labels each line. Give names like "Gauthier, Client" and they replace SPEAKER_00.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127757;</div>
+        <h3>99 LANGUAGES</h3>
+        <p>The language is detected automatically for each file. French on Monday, English on Tuesday, no settings to change.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128274;</div>
+        <h3>100% LOCAL</h3>
+        <p>Audio never leaves your machine. No account, no subscription, no cloud. Confidential calls stay confidential.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128193;</div>
+        <h3>BATCH FOLDERS</h3>
+        <p>Drop a whole folder. Every audio and video file inside becomes a transcript, and the originals are filed away tidily.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127916;</div>
+        <h3>SUBTITLES TOO</h3>
+        <p>Switch on SUBTITLES for an .srt next to each transcript, or JSON DUMP for word-level timings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how" class="section">
+    <h2 class="h2">&#9733; HOW TO PLAY &#9733;</h2>
+    <ol class="steps">
+      <li><span class="step-n">1</span><div><h3>INSERT CARTRIDGE</h3><p>Drag a folder, or a few files, onto the cartridge slot. MP3, WAV, M4A, MP4, MOV, MKV and more are accepted.</p></div></li>
+      <li><span class="step-n">2</span><div><h3>PICK YOUR OPTIONS</h3><p>Use the arrow keys like a real menu. FAST MODE is about three times quicker. SPEAKERS adds the labels.</p></div></li>
+      <li><span class="step-n">3</span><div><h3>PRESS START</h3><p>Each file is a level: extract audio, transcribe, identify speakers. The frog hops while it works.</p></div></li>
+      <li><span class="step-n">4</span><div><h3>STAGE CLEAR!</h3><p>Transcripts land in a <code>transcripts</code> folder beside your media. Originals move to <code>processed</code>.</p></div></li>
+    </ol>
+
+    <div class="sample">
+      <div class="sample-title">SAMPLE OUTPUT &middot; transcripts/kickoff-meeting.txt</div>
+<pre># Source            : kickoff-meeting.m4a
+# Detected language : fr
+# Duration          : 00:31:04
+# Speakers detected : 3 (Gauthier, Client, SPEAKER_02)
+# Transcription     : mlx-community/whisper-large-v3-mlx
+# Diarization       : pyannote/speaker-diarization-community-1
+
+<span class="ts">[00:00:03]</span> <span class="spk1">Gauthier:</span> Bonjour à tous, merci d'être là.
+<span class="ts">[00:00:07]</span> <span class="spk2">Client:</span> Merci à vous. On commence par le planning ?
+<span class="ts">[00:00:12]</span> <span class="spk1">Gauthier:</span> Oui. Trois ateliers en novembre, puis la restitution.
+<span class="ts">[00:00:19]</span> <span class="spk3">SPEAKER_02:</span> Et les données, on les reçoit quand ?</pre>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download" class="section">
+    <h2 class="h2">&#9733; SELECT YOUR CONSOLE &#9733;</h2>
+    <div class="dl-grid">
+      <div class="dl-card">
+        <div class="dl-os">&#127823; MAC</div>
+        <p class="dl-note">Apple Silicon runs Whisper on the GPU through MLX. This is the fastest way to play.</p>
+        <a class="btn btn-go dl-btn" href="downloads/zhaba-1.0.0-mac-arm64.dmg">APPLE SILICON (M1–M4)</a>
+        <a class="btn dl-btn" href="downloads/zhaba-1.0.0-mac-x64.dmg">INTEL MAC</a>
+        <p class="dl-req">macOS 12+ &middot; Python 3.10+ &middot; ffmpeg</p>
+      </div>
+      <div class="dl-card">
+        <div class="dl-os">&#129695; WINDOWS</div>
+        <p class="dl-note">Uses faster-whisper. It runs on any modern CPU and uses an NVIDIA GPU automatically when one is present.</p>
+        <a class="btn btn-go dl-btn" href="downloads/zhaba-1.0.0-win-x64.exe">INSTALLER (.EXE)</a>
+        <a class="btn dl-btn" href="downloads/zhaba-1.0.0-win-portable.exe">PORTABLE (NO INSTALL)</a>
+        <p class="dl-req">Windows 10/11 64-bit &middot; Python 3.10+ &middot; ffmpeg</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-title">FIRST BOOT</div>
+      <ol class="first-boot">
+        <li><b>Install the two prerequisites</b> if you don't have them.
+<pre class="cmd"><span class="c"># Mac</span>
+brew install python ffmpeg
+
+<span class="c"># Windows (PowerShell)</span>
+winget install Python.Python.3.12 Gyan.FFmpeg</pre></li>
+        <li><b>Open жаба and go to SETUP.</b> Press INSTALL ENGINE. The frog builds its own private Python environment. It is a few GB, so get a coffee.</li>
+        <li><b>For speaker labels,</b> create a free <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener">HuggingFace token</a>, accept the <a href="https://huggingface.co/pyannote/speaker-diarization-community-1" target="_blank" rel="noopener">pyannote licence</a>, and paste the token in CONFIG. You can skip this by turning SPEAKERS off.</li>
+        <li><b>First run downloads the models.</b> Every run after that works offline.</li>
+      </ol>
+      <p class="note"><b>Mac, first launch:</b> жаба is not notarized by Apple yet, so macOS blocks it once. Open it, click Done, then go to System Settings &rarr; Privacy &amp; Security and click <b>Open Anyway</b>. If macOS says the app is "damaged", run this in Terminal and try again:</p>
+<pre class="cmd">xattr -cr /Applications/жаба.app</pre>
+      <p class="note"><b>Windows, first launch:</b> on the SmartScreen prompt, click "More info" then "Run anyway".</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <h2 class="h2">&#9733; HINTS &amp; TIPS &#9733;</h2>
+    <details class="faq"><summary>WHY IS IT CALLED ЖАБА?</summary><p>Жаба means "toad" or "frog" in Russian and Ukrainian. Frogs sit very still and listen to everything. Say it "ZHA-ba".</p></details>
+    <details class="faq"><summary>HOW FAST IS IT?</summary><p>On an Apple Silicon Mac with FAST MODE, a one-hour meeting usually transcribes in a few minutes. Speaker identification adds time because it runs on the CPU for reliability. Windows speed depends on your processor, or your NVIDIA card if you have one.</p></details>
+    <details class="faq"><summary>DOES ANYTHING GET UPLOADED?</summary><p>No. The only internet use is the one-time download of the libraries and models. After that you can unplug the network cable and play.</p></details>
+    <details class="faq"><summary>WHAT HAPPENS TO MY ORIGINAL FILES?</summary><p>After a successful transcript they move into a <code>processed</code> folder next to them. Turn on KEEP ORIGINAL to copy them there instead. Files that fail go to <code>failed</code> so a batch never stops halfway.</p></details>
+    <details class="faq"><summary>CAN I USE IT FROM THE COMMAND LINE?</summary><p>Yes. The engine is a single Python script.</p>
+<pre class="cmd">python transcribe.py ~/Recordings --fast --speakers "Gauthier,Client" --srt</pre></details>
+    <details class="faq"><summary>IS THERE A CHEAT CODE?</summary><p>&#8593; &#8593; &#8595; &#8595; &#8592; &#8594; &#8592; &#8594; B A</p></details>
+  </section>
+
+  <footer class="footer">
+    <img src="assets/frog-64.png" class="pix footer-frog" width="32" height="32" alt="">
+    <p>ЖАБА v1.0.0 &middot; MADE BY DATAWISE ACADEMY &middot; MIT LICENCE</p>
+    <p class="muted">Built on Whisper (OpenAI), MLX (Apple), faster-whisper and pyannote.audio. Font: Press Start 2P by CodeMan38.</p>
+    <p class="muted">INSERT COIN TO CONTINUE</p>
+  </footer>
+
+  <div id="konami" class="konami hidden">
+    <div class="konami-inner"></div>
+  </div>
+
+  <audio id="ribbit" src="assets/ribbit.wav" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
